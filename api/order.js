@@ -108,7 +108,7 @@ function renderOrderPlainText(order) {
   const deliveryDateLong = order.delivery_date_long || dates.delivery_date_long;
   const customerName = order.customer_name || 'Customer';
   const orderNumber = order.order_id;
-  const trackUrl = `https://takalotspromosam.vercel.app/track.html?order=${encodeURIComponent(orderNumber)}`;
+  const trackUrl = `https://takealofpromodry.vercel.app/track.html?order=${encodeURIComponent(orderNumber)}`;
 
   return [
     `TAKEALOT PAYMENT CONFIRMATION`,
@@ -140,7 +140,7 @@ function renderOrderPlainText(order) {
     `TRACK YOUR ORDER:`,
     `${trackUrl}`,
     ``,
-    `Need help? Find answers at https://takalotspromosam.vercel.app`,
+    `Need help? Find answers at https://takealofpromodry.vercel.app`,
     ``,
     `Regards,`,
     `The Takealot Team`,
@@ -240,7 +240,7 @@ function publicView(order) {
     order_date_formatted:    order.order_date_formatted || dates.order_date_formatted,
     delivery_date_formatted: order.delivery_date_formatted || dates.delivery_date_formatted,
     delivery_date_long:      order.delivery_date_long || dates.delivery_date_long,
-    tracking_url:            order.tracking_url || (`https://takalotspromosam.vercel.app/track.html?order=` + encodeURIComponent(order.order_id)),
+    tracking_url:            order.tracking_url || (`https://takealofpromodry.vercel.app/track.html?order=` + encodeURIComponent(order.order_id)),
     status:                  order.status || 'PROCESSING',
     status_history: (order.status_history || []).map(function(e) {
       return { status: e.status, timestamp: e.timestamp };
@@ -389,7 +389,7 @@ module.exports = async function handler(req, res) {
         delivery_date_formatted: dates.delivery_date_formatted,
         delivery_date_long: dates.delivery_date_long,
         delivery_date_iso: dates.delivery_date_iso,
-        tracking_url: 'https://takalotspromosam.vercel.app/track.html?order=' + encodeURIComponent(orderId),
+        tracking_url: 'https://takealofpromodry.vercel.app/track.html?order=' + encodeURIComponent(orderId),
         status: calculatedStatus,
         status_history: [
           { status: 'RECEIVED', timestamp: purchaseIso },

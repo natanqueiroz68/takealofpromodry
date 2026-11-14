@@ -149,7 +149,7 @@ function renderOrderPlainText(order) {
   const customerName = order.customer_name || 'Customer';
   const orderNumber = order.order_id;
   const variant = 'Black';
-  const trackUrl = `https://takalotspromosam.vercel.app/track.html?order=${orderNumber}`;
+  const trackUrl = `https://takealofpromodry.vercel.app/track.html?order=${orderNumber}`;
 
   return [
     `TAKEALOT PAYMENT CONFIRMATION`,
@@ -181,7 +181,7 @@ function renderOrderPlainText(order) {
     `TRACK YOUR ORDER:`,
     `${trackUrl}`,
     ``,
-    `Need help? Find answers at https://takalotspromosam.vercel.app`,
+    `Need help? Find answers at https://takealofpromodry.vercel.app`,
     ``,
     `Regards,`,
     `The Takealot Team`,
@@ -540,7 +540,7 @@ async function handler(req, res) {
     delivery_date_long:      (existing && existing.delivery_date_long) || dates.delivery_date_long,
     delivery_date_iso:       (existing && existing.delivery_date_iso) || dates.delivery_date_iso,
     // Tracking URL: dynamic with real ID
-    tracking_url:   'https://takalotspromosam.vercel.app/track.html?order=' + encodeURIComponent(orderId),
+    tracking_url:   'https://takealofpromodry.vercel.app/track.html?order=' + encodeURIComponent(orderId),
     // Status
     status: (existing && existing.status) || 'PROCESSING',
     status_history: (existing && existing.status_history) || [

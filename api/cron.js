@@ -273,7 +273,7 @@ function renderStagePlainText(order, stageInfo, pDate, dDate) {
   const orderNumber = order.order_id;
   const orderDateShort = formatOrderDateShort(pDate);
   const deliveryDateLong = formatDeliveryDateLong(dDate);
-  const trackUrl = `https://takalotspromosam.vercel.app/track.html?order=${encodeURIComponent(orderNumber)}`;
+  const trackUrl = `https://takealofpromodry.vercel.app/track.html?order=${encodeURIComponent(orderNumber)}`;
 
   const paragraphs = stageInfo.paragraphs(orderNumber, deliveryDateLong)
     .map((p) => p.replace(/<[^>]+>/g, ''));
@@ -297,7 +297,7 @@ function renderStagePlainText(order, stageInfo, pDate, dDate) {
     `- Item: 1x ghd Air Professional Hair Dryer (Black) - R 1,297.00`,
     `- Total Paid: R 1,297.00`,
     ``,
-    `Need help? Visit https://takalotspromosam.vercel.app`,
+    `Need help? Visit https://takealofpromodry.vercel.app`,
     ``,
     `Regards,`,
     `The Takealot Team`,
