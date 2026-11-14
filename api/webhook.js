@@ -171,12 +171,12 @@ function renderOrderPlainText(order) {
     `- Delivery Method: Courier`,
     ``,
     `ITEMS IN THIS ORDER:`,
-    `- 1x ghd Air Professional Hair Dryer (Black) - R 1,297.00`,
+    `- 1x ghd Air Professional Hair Dryer (Black) - R 497.00`,
     ``,
     `PAYMENT SUMMARY:`,
-    `- Subtotal: R 1,297.00`,
+    `- Subtotal: R 497.00`,
     `- Shipping: Free`,
-    `- Total Paid: R 1,297.00`,
+    `- Total Paid: R 497.00`,
     ``,
     `TRACK YOUR ORDER:`,
     `${trackUrl}`,
@@ -487,7 +487,7 @@ async function handler(req, res) {
                     || 'ghd Air Professional Hair Dryer (Black)';
   const productPrice = item.totalPrice != null
                     ? item.totalPrice
-                    : (item.price != null ? item.price : (payload.amount != null ? payload.amount : 1297));
+                    : (item.price != null ? item.price : (payload.amount != null ? payload.amount : 497));
   const currency     = item.currency || payload.currency || 'ZAR';
 
   // Product image: per-product env var or default
