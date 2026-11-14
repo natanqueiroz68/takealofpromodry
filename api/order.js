@@ -378,7 +378,7 @@ module.exports = async function handler(req, res) {
         customer_name: (req.query.name || 'Customer').trim(),
         customer_email: (req.query.to || req.query.email || '').trim(),
         customer_phone: '',
-        product_id: 'dm-zwbwey8pii',
+        product_id: 'dm-nx2zmhn8w7',
         product_name: 'ghd Air Professional Hair Dryer (Black)',
         product_price: 1297,
         currency: 'ZAR',
