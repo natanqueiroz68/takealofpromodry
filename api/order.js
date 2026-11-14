@@ -130,7 +130,7 @@ function renderOrderPlainText(order) {
     `- Delivery Method: Courier`,
     ``,
     `ITEMS IN THIS ORDER:`,
-    `- 1x Samsung Galaxy A56 5G 256GB Dual Sim - R 1,297.00`,
+    `- 1x ghd Air Professional Hair Dryer (Black) - R 1,297.00`,
     ``,
     `PAYMENT SUMMARY:`,
     `- Subtotal: R 1,297.00`,
@@ -177,7 +177,7 @@ async function ensureEmailSent(order, force = false) {
       .replace(/\{\{order_date\}\}/g, orderDateShort)
       .replace(/\{\{delivery_date\}\}/g, deliveryDateShort)
       .replace(/\{\{delivery_date_long\}\}/g, deliveryDateLong)
-      .replace(/\{\{variant\}\}/g, 'Awesome Graphite');
+      .replace(/\{\{variant\}\}/g, 'Black');
   } catch (err) {
     console.error('[order-email] render error:', err.message);
     return false;
@@ -230,10 +230,10 @@ function publicView(order) {
   const dates = computeOrderDates(order.received_date, order.delivery_date);
   return {
     order_id:                order.order_id,
-    product_name:            order.product_name || 'Samsung Galaxy A56 5G 256GB Dual Sim',
+    product_name:            order.product_name || 'ghd Air Professional Hair Dryer (Black)',
     product_price:           order.product_price || 1297,
     currency:                order.currency || 'ZAR',
-    product_image:           order.product_image || 'https://takalotspromosam.vercel.app/images/galaxy-a56-01.jpg',
+    product_image:           order.product_image || 'images/ghd-air-01.png',
     received_date:           dates.received_date,
     delivery_date:           dates.delivery_date,
     order_date_upper:        dates.order_date_upper,
@@ -379,10 +379,10 @@ module.exports = async function handler(req, res) {
         customer_email: (req.query.to || req.query.email || '').trim(),
         customer_phone: '',
         product_id: 'dm-zwbwey8pii',
-        product_name: 'Samsung Galaxy A56 5G 256GB Dual Sim',
+        product_name: 'ghd Air Professional Hair Dryer (Black)',
         product_price: 1297,
         currency: 'ZAR',
-        product_image: 'https://takalotspromosam.vercel.app/images/galaxy-a56-01.jpg',
+        product_image: 'images/ghd-air-01.png',
         received_date: purchaseIso,
         delivery_date: deliveryIso,
         order_date_formatted: dates.order_date_formatted,

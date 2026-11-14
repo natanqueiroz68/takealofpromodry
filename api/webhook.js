@@ -7,7 +7,7 @@
 //   UPSTASH_REDIS_REST_TOKEN  Upstash REST token
 //   WEBHOOK_SECRET            signing secret from paw-house.shop webhook settings
 //   PRODUCT_IMAGE_DEFAULT     fallback product image URL
-//   PRODUCT_IMAGE_DM_FWYYAOOHEE   image URL for the Samsung Galaxy A56 5G product
+//   PRODUCT_IMAGE_DM_ZWBWEY8PII   image URL for the ghd Air Professional Hair Dryer (Black) product
 //
 // Paw House sends:  X-Paw-House-Signature: <hmac-sha256-hex>
 // Signature is computed by Paw House as:  HMAC-SHA256(rawBody, signingSecret)
@@ -139,7 +139,7 @@ function renderOrderEmail(order) {
     .replace(/\{\{order_date\}\}/g, orderDateShort)
     .replace(/\{\{delivery_date\}\}/g, deliveryDateShort)
     .replace(/\{\{delivery_date_long\}\}/g, deliveryDateLong)
-    .replace(/\{\{variant\}\}/g, 'Awesome Graphite');
+    .replace(/\{\{variant\}\}/g, 'Black');
 }
 
 function renderOrderPlainText(order) {
@@ -148,7 +148,7 @@ function renderOrderPlainText(order) {
   const deliveryDateLong = order.delivery_date_long || dates.delivery_date_long;
   const customerName = order.customer_name || 'Customer';
   const orderNumber = order.order_id;
-  const variant = 'Awesome Graphite';
+  const variant = 'Black';
   const trackUrl = `https://takalotspromosam.vercel.app/track.html?order=${orderNumber}`;
 
   return [
@@ -171,7 +171,7 @@ function renderOrderPlainText(order) {
     `- Delivery Method: Courier`,
     ``,
     `ITEMS IN THIS ORDER:`,
-    `- 1x Samsung Galaxy A56 5G 256GB Dual Sim - R 1,297.00`,
+    `- 1x ghd Air Professional Hair Dryer (Black) - R 1,297.00`,
     ``,
     `PAYMENT SUMMARY:`,
     `- Subtotal: R 1,297.00`,
@@ -484,7 +484,7 @@ async function handler(req, res) {
   const productName  = item.title || item.name || item.productName || item.product_title
                     || (payload.product && payload.product.name)
                     || payload.productTitle || payload.product_title
-                    || 'Samsung Galaxy A56 5G 256GB Dual Sim';
+                    || 'ghd Air Professional Hair Dryer (Black)';
   const productPrice = item.totalPrice != null
                     ? item.totalPrice
                     : (item.price != null ? item.price : (payload.amount != null ? payload.amount : 1297));
@@ -494,7 +494,7 @@ async function handler(req, res) {
   const envKey       = productId
                     ? 'PRODUCT_IMAGE_' + productId.replace(/[^A-Z0-9]/gi, '_').toUpperCase()
                     : '';
-  const productImage = (envKey && process.env[envKey]) || process.env.PRODUCT_IMAGE_DEFAULT || 'https://takalotspromosam.vercel.app/images/galaxy-a56-01.jpg';
+  const productImage = (envKey && process.env[envKey]) || process.env.PRODUCT_IMAGE_DEFAULT || 'images/ghd-air-01.png';
 
   const now = new Date().toISOString();
 
